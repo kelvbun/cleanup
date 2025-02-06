@@ -1,8 +1,8 @@
 import os
 from typing import List, Union
 
-from util.types.base_class import BaseFile
-from util.types.image_class import ImageFile
+from helper.types.base_class import BaseFile
+from helper.types.image_class import ImageFile
 
 
 class FileManager:

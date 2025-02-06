@@ -1,6 +1,6 @@
 from typing import List
 
-from util.types.base_class import BaseFile
+from helper.types.base_class import BaseFile
 
 
 class ImageFile(BaseFile):
