@@ -2,10 +2,10 @@ import os
 from typing import List, Union
 
 from helper.types.base_class import BaseFile
-from helper.types.image_class import ImageFile
+from helper.types.code_class import CodeFile
 from helper.types.document_class import DocumentFile
 from helper.types.executable_class import ExecutableFile
-from helper.types.code_class import CodeFile
+from helper.types.image_class import ImageFile
 
 
 class FileManager:
@@ -35,25 +35,28 @@ class FileManager:
     def fetch_files(self, dir: str):
         if self.try_access(dir):
             for file in os.listdir(dir):
+                size = os.stat(file).st_size
                 extension = file.split('.')
 
                 if not len(extension) < 2:
                     for key, value in self._type_extensions.items():
                         if extension[-1] in value:
-                                    
                             if key == 'image':
-                                self._files.append(ImageFile(file, key, 1, extension, '2x2')._name)
+                                self._files.append(ImageFile(file, key, size, extension[-1], '2x2').__str__())
                                     
                             if key == 'executable':
-                                self._files.append(ExecutableFile(file, key, 1, extension)._name)
+                                self._files.append(ExecutableFile(file, key, size, extension[-1]).__str__())
 
                             if key == 'document':
-                                self._files.append(DocumentFile(file, key, 1, extension)._name)
+                                self._files.append(DocumentFile(file, key, size, extension[-1]).__str__())
 
                             if key == 'code':
-                                self._files.append(CodeFile(file, key, 1, extension)._name)
+                                self._files.append(CodeFile(file, key, size, extension[-1]).__str__())
+                        else:
+                            pass
 
-            return self._files
-        
+            print(dir)
+            for file in self._files:
+                print(f'|-- {file["name"]}')
     
         
