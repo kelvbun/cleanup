@@ -3,11 +3,13 @@ from typing import List, Union
 
 from helper.types.base_class import BaseFile
 from helper.types.image_class import ImageFile
+from helper.types.document_class import DocumentFile
+from helper.types.executable_class import ExecutableFile
 
 
 class FileManager:
     _files: List[BaseFile] = []
-    _types: dict = {'image': ImageFile._extensions}
+    _types: dict = {'image': ImageFile._extensions, 'document': DocumentFile, 'executable': ExecutableFile}
 
     @property
     def files(self):
