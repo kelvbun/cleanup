@@ -4,7 +4,7 @@ from helper.types.base_class import BaseFile
 
 
 class ExecutableFile(BaseFile):
-    _extensions: List[str] = ['js', 'py', 'cpp', 'java', 'bat', 'css', 'html']
+    _extensions: List[str] = ['app']
 
     def __init__(self, _name, _type, _size, _extension):
         super().__init__(_name, _type, _size, _extension)

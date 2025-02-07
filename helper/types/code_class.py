@@ -3,8 +3,8 @@ from typing import List
 from helper.types.base_class import BaseFile
 
 
-class DocumentFile(BaseFile):
-    _extensions: List[str] = ['docx', 'pdf', 'md', 'gitignore']
+class CodeFile(BaseFile):
+    _extensions: List[str] = ['js', 'py', 'cpp', 'java', 'bat', 'css', 'html']
 
     def __init__(self, _name, _type, _size, _extension):
         super().__init__(_name, _type, _size, _extension)
@@ -14,6 +14,8 @@ class DocumentFile(BaseFile):
 
     def __str__(self):
         return f'name: {self._name}, type: {self._type}, size: {self._size}'
+
+    
 
     
 

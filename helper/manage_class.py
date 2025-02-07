@@ -5,11 +5,12 @@ from helper.types.base_class import BaseFile
 from helper.types.image_class import ImageFile
 from helper.types.document_class import DocumentFile
 from helper.types.executable_class import ExecutableFile
+from helper.types.code_class import CodeFile
 
 
 class FileManager:
     _files: List[BaseFile] = []
-    _types: dict = {'image': ImageFile._extensions, 'document': DocumentFile, 'executable': ExecutableFile}
+    _type_extensions: dict = {'image': ImageFile._extensions, 'document': DocumentFile._extensions, 'executable': ExecutableFile._extensions, 'code': CodeFile._extensions}
 
     @property
     def files(self):
@@ -37,9 +38,20 @@ class FileManager:
                 extension = file.split('.')
 
                 if not len(extension) < 2:
-                    for key, value in self._types.items():
+                    for key, value in self._type_extensions.items():
                         if extension[-1] in value:
-                            self._files.append(ImageFile(file, key, 1, extension, '2x2')._name)
+                                    
+                            if key == 'image':
+                                self._files.append(ImageFile(file, key, 1, extension, '2x2')._name)
+                                    
+                            if key == 'executable':
+                                self._files.append(ExecutableFile(file, key, 1, extension)._name)
+
+                            if key == 'document':
+                                self._files.append(DocumentFile(file, key, 1, extension)._name)
+
+                            if key == 'code':
+                                self._files.append(CodeFile(file, key, 1, extension)._name)
 
             return self._files
         
