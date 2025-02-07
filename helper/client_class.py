@@ -9,7 +9,13 @@ from helper.types.image_class import ImageFile
 
 
 class FileManager:
-    _files: List[BaseFile] = []
+    _files: List[Union[BaseFile, 
+                       ImageFile, 
+                       DocumentFile, 
+                       ExecutableFile, 
+                       CodeFile
+                       ]] = []
+    
     _type_extensions: dict = {'image': ImageFile._extensions, 
                               'document': DocumentFile._extensions, 
                               'executable': ExecutableFile._extensions, 

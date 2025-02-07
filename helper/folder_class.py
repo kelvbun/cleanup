@@ -17,7 +17,12 @@ class FolderFile:
         self._files: List[dict] = _files
 
     def __str__(self):
-        return {'name': self._name, 'amount': self._amount, 'type': self._type,'size': self._size, 'files': self._files}
+        return {'name': self._name, 
+                'amount': self._amount, 
+                'type': self._type,
+                'size': self._size, 
+                'files': self._files
+                }
     
 
 
