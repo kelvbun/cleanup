@@ -2,7 +2,14 @@ from typing import List
 
 
 class FolderFile:
-    def __init__(self, _name: str, _amount: int, _type: str, _size: int, _files: List[dict]) -> None:
+    def __init__(self, 
+                _name: str, 
+                _amount: int, 
+                _type: str, 
+                _size: int, 
+                _files: List[dict]
+                ) -> None:
+        
         self._name: str = _name 
         self._amount: int = _amount
         self._type: str = _type

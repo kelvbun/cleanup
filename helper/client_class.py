@@ -10,7 +10,10 @@ from helper.types.image_class import ImageFile
 
 class FileManager:
     _files: List[BaseFile] = []
-    _type_extensions: dict = {'image': ImageFile._extensions, 'document': DocumentFile._extensions, 'executable': ExecutableFile._extensions, 'code': CodeFile._extensions}
+    _type_extensions: dict = {'image': ImageFile._extensions, 
+                              'document': DocumentFile._extensions, 
+                              'executable': ExecutableFile._extensions, 
+                              'code': CodeFile._extensions}
 
     @property
     def files(self):
