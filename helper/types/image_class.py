@@ -15,6 +15,7 @@ class ImageFile(BaseFile):
 
     def __str__(self):
         return {'name': self._name, 'extension': self._extension, 'type': self._type, 'size': self._size}
+    
     @property
     def dimension(self):
         return self._dimension
