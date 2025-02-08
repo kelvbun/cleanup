@@ -6,6 +6,7 @@ from helper.types.code_class import CodeFile
 from helper.types.document_class import DocumentFile
 from helper.types.executable_class import ExecutableFile
 from helper.types.image_class import ImageFile
+from helper.folder_class import FolderFile
 
 
 class FileManager:
@@ -61,9 +62,17 @@ class FileManager:
 
                             if key == 'code':
                                 self._files.append(CodeFile(file, key, size, extension[-1]).__str__())
+                       
                         else:
                             pass
-
+                else:
+                    if self.try_access(file):
+                        amount = len(file)
+                        files = [f for f in os.listdir(file)]
+                        sizes = [os.stat(f'{file}/{s}').st_size for s in files]
+                        format_files = dict(zip(files, sizes))
+                        self._files.append(FolderFile(file, amount, 'folder', size, format_files).__str__())
+                                
             print(dir)
             for file in self._files:
                 print(f'|-- {file["name"]}')

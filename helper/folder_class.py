@@ -14,7 +14,7 @@ class FolderFile:
         self._amount: int = _amount
         self._type: str = _type
         self._size: int = _size
-        self._files: List[dict] = _files
+        self._files: dict = _files
 
     def __str__(self):
         return {'name': self._name, 
@@ -23,7 +23,7 @@ class FolderFile:
                 'size': self._size, 
                 'files': self._files
                 }
-    
+
 
 
         
