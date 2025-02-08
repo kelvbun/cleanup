@@ -16,14 +16,6 @@ class FolderFile:
         self._size: int = _size
         self._files: dict = _files
 
-    def __str__(self):
-        return {'name': self._name, 
-                'amount': self._amount, 
-                'type': self._type,
-                'size': self._size, 
-                'files': self._files
-                }
-    
     @property
     def name(self):
         return self._name
@@ -43,6 +35,15 @@ class FolderFile:
     @property
     def files(self):
         return self._files
+
+    def __str__(self):
+        return {'name': self._name, 
+                'amount': self._amount, 
+                'type': self._type,
+                'size': self._size, 
+                'files': self._files
+                }
+
 
 
 

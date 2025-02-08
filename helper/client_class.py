@@ -1,12 +1,12 @@
 import os
 from typing import List, Union
 
+from helper.folder_class import FolderFile
 from helper.types.base_class import BaseFile
 from helper.types.code_class import CodeFile
 from helper.types.document_class import DocumentFile
 from helper.types.executable_class import ExecutableFile
 from helper.types.image_class import ImageFile
-from helper.folder_class import FolderFile
 
 
 class FileManager:

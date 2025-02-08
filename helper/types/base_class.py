@@ -13,14 +13,7 @@ class BaseFile:
 
         if not _extension: 
             return # this is not a file (?)
-
-    def __str__(self):
-        return {'name': self._name, 
-                'extension': self._extension, 
-                'type': self._type, 
-                'size': self._size
-                }
-    
+        
     @property
     def name(self):
         return self._name
@@ -36,6 +29,13 @@ class BaseFile:
     @property
     def size(self):
         return self._size
+
+    def __str__(self):
+        return {'name': self._name, 
+                'extension': self._extension, 
+                'type': self._type, 
+                'size': self._size
+                }
     
 
     

@@ -19,6 +19,10 @@ class ImageFile(BaseFile):
 
         if _extension and _extension not in self._extensions:
             return # either not a file or the proper extension (?)
+        
+    @property
+    def dimension(self):
+        return self._dimension
 
     def __str__(self):
         return {'name': self._name, 
@@ -27,9 +31,6 @@ class ImageFile(BaseFile):
                 'size': self._size
                 }
     
-    @property
-    def dimension(self):
-        return self._dimension
     
 
     
