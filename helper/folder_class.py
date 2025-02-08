@@ -23,6 +23,26 @@ class FolderFile:
                 'size': self._size, 
                 'files': self._files
                 }
+    
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def amount(self):
+        return self._amount
+    
+    @property
+    def type(self):
+        return self._type
+    
+    @property
+    def size(self):
+        return self._size
+    
+    @property
+    def files(self):
+        return self._files
 
 
 

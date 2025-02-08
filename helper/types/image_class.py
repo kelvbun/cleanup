@@ -31,10 +31,6 @@ class ImageFile(BaseFile):
     def dimension(self):
         return self._dimension
     
-    @dimension.setter
-    def dimension(self, value):
-        return print('we cant resize this!')
-    
 
     
 

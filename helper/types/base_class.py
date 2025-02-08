@@ -21,4 +21,21 @@ class BaseFile:
                 'size': self._size
                 }
     
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def extension(self):
+        return self._extension
+    
+    @property
+    def type(self):
+        return self._type
+
+    @property
+    def size(self):
+        return self._size
+    
+
     
