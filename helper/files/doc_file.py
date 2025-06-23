@@ -1,10 +1,10 @@
 from typing import List
 
-from helper.types.base_class import BaseFile
+from helper.files.base_file import BaseFile
 
 
-class CodeFile(BaseFile):
-    _extensions: List[str] = ['js', 'py', 'cpp', 'java', 'bat', 'css', 'html']
+class DocumentFile(BaseFile):
+    _extensions: List[str] = ['docx', 'pdf', 'md', 'gitignore']
 
     def __init__(self, 
                 _name: str, 
@@ -24,8 +24,6 @@ class CodeFile(BaseFile):
                 'type': self._type, 
                 'size': self._size
                 }
-    
-
     
 
     

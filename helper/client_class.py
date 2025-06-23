@@ -2,11 +2,11 @@ import os
 from typing import List, Union
 
 from helper.folder_class import FolderFile
-from helper.types.base_class import BaseFile
-from helper.types.code_class import CodeFile
-from helper.types.document_class import DocumentFile
-from helper.types.executable_class import ExecutableFile
-from helper.types.image_class import ImageFile
+from helper.files.base_file import BaseFile
+from helper.files.code_file import CodeFile
+from helper.files.doc_file import DocumentFile
+from helper.files.exe_file import ExecutableFile
+from helper.files.img_file import ImageFile
 
 
 class FileManager:
@@ -20,7 +20,7 @@ class FileManager:
     _type_extensions: dict = {'image': ImageFile._extensions, 
                               'document': DocumentFile._extensions, 
                               'executable': ExecutableFile._extensions, 
-                              'code': CodeFile._extensions}
+                              'code': CodeFile.extensions}
 
     @property
     def files(self):
