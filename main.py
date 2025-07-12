@@ -1,5 +1,5 @@
 from helper.client_class import FileManager
-from helper.files.base_file import BaseFile
+from helper.types.files import BaseFile
 
 from pathlib import Path
 
