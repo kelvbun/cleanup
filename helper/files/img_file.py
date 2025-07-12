@@ -1,39 +1,14 @@
-from typing import List
-
+from dataclasses import dataclass
+from typing import ClassVar, List
 from helper.files.base_file import BaseFile
 
-
+@dataclass(slots=True)
 class ImageFile(BaseFile):
-    _extensions: List[str] = ['png', 'webp', 'jpg', 'jpeg', 'svg', 'gif']
+    dimension: str
+    extensions: ClassVar[List[str]] = ['png', 'webp', 'jpg', 'jpeg', 'svg', 'gif']
 
-    def __init__(self, 
-                _name: str, 
-                _type: str, 
-                _size: int, 
-                _extension: str, 
-                _dimension: str
-                ) -> None:
-        
-        super().__init__(_name, _type, _size, _extension)
-        self._dimension: str = _dimension
+    def __post_init__(self):
+        super().__post_init__()
 
-        if _extension and _extension not in self._extensions:
-            return # either not a file or the proper extension (?)
-        
-    @property
-    def dimension(self):
-        return self._dimension
-
-    def __str__(self):
-        return {'name': self._name, 
-                'extension': self._extension, 
-                'type': self._type, 
-                'size': self._size
-                }
-    
-    
-
-    
-
-    
-    
+    def __str__(self) -> str:
+        return f"{super().__str__()} ({self.dimension})"

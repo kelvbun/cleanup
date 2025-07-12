@@ -1,16 +1,15 @@
 from helper.client_class import FileManager
 from helper.files.base_file import BaseFile
 
+from pathlib import Path
 
 #manager = FileManager()
-#print(manager.fetch_files('/Users/kelvin/Documents/code/cleanup'))
-#manager.try_cleanup(manager._files)
+#print(manager.map_directory(r'C:\Users\ii_sk\OneDrive\Code\cleanup'))
 
-base = BaseFile(
-    'a file',
-    'image',
-    20,
-    'png'
-)
+path = Path(r'C:\Users\ii_sk\OneDrive\Code\cleanup')
 
-print(str(base))
+for item in path.rglob("*"):
+    if item.is_file():
+        print("File:", item)
+    elif item.is_dir():
+        print("Folder:", item)

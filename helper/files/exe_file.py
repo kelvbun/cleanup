@@ -1,29 +1,19 @@
-from typing import List
+from dataclasses import dataclass
 
+from typing import ClassVar, List
 from helper.files.base_file import BaseFile
 
 
+@dataclass
 class ExecutableFile(BaseFile):
-    _extensions: List[str] = ['app']
+    extensions: ClassVar[List[str]] = ['exe']
 
-    def __init__(self,
-                _name: str, 
-                _type: str, 
-                _size: int, 
-                _extension: str
-                ) -> None:
-        
-        super().__init__(_name, _type, _size, _extension)
+    def __post_init__(self):
+        super().__post_init__()
+    
 
-        if _extension and _extension not in self._extensions:
-            return # either not a file or the proper extension (?)
 
-    def __str__(self):
-        return {'name': self._name, 
-                'extension': self._extension, 
-                'type': self._type, 
-                'size': self._size
-                }
+
     
 
     
